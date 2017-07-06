@@ -19,7 +19,7 @@ var gulp         = require('gulp'),
 
 gulp.task('sass', function(){
 	return gulp.src(['app/sass/*.sass'])
-	.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError)))
+	.pipe(sass(({outputStyle: 'compressed'})))
 	.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
 	.pipe(gulp.dest('app/css/'))
 	.pipe(browserSync.reload({stream: true}))
@@ -48,7 +48,7 @@ gulp.task('csslibs', ['sass'], function(){
 
 gulp.task('browser-sync', function(){
 	browserSync({
-		proxy: "[Im] protgolio/works/app",
+		proxy: "portfolio/app",
 		notify: false
 	});
 });
