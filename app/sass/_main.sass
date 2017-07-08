@@ -240,13 +240,13 @@ a
   font-size: 21px
   padding: 10px 0
   text-align: center
-  background: $m-color2
-  border-radius: 5px
+  background: #ae7e57
+  border-radius: 30px
   transition: 1s
   +r(1024)
     display: none
   &:hover
-    background: #ae7e57
+    background: $m-color2
     transition: 1s
 
 .footer
@@ -302,10 +302,72 @@ a
     padding: 2px 5px
     border-radius: 2px
 
-main.content
+.content
   float: right
   padding: 0px 10px
   width: 57%
-  +r(960)
+  overflow-y: auto
+  height: 100vh
+  +r(1024)
+    height: auto
+  &::-webkit-scrollbar
+    width: 6px
+    height: auto
+  &::-webkit-scrollbar-track
+    background: #61574e
+  &::-webkit-scrollbar-thumb
+    background: #ae7e57
+  .container
+    width: 90%
+    margin: 50px auto 0
+  &__page
+    width: 100%
+  h2
+    font-size: 36px
+    color: #9c7756
+    font-weight: 100
+    margin-bottom: 50px
+    white-space: nowrap
+    +r(1024)
+      white-space: normal
+  &__description
+    color: #e4e3e3
+  +r(1024)
     width: 100%
     float: none
+
+.demo
+  width: 45%
+  margin: 50px auto
+  display: -webkit-flex
+  display: -ms-flex
+  display: flex
+  +r(1024)
+    width: 100%
+  span
+    margin: 10px 20px
+    color: #FFF
+    display: block
+  &__github, &__blank
+    width: 60%
+    font-size: 18px
+    font-weight: 100
+    padding: 10px 0
+    transition: .5s
+    display: block
+    text-align: center
+  &__blank
+    background: #ae7e57
+    border-radius: 30px
+    color: #FFF
+    &:hover
+      background: $m-color2
+  &__github
+    width: 15%
+    background: none
+    color: #FFF
+    opacity: 0.5
+    text-decoration: underline
+    text-align: left
+    &:hover
+      opacity: 1
